@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { IoPlay } from "react-icons/io5";
 import useHover from "./hooks/useHover";
+import {BiFullscreen} from "react-icons/bi"
 
 const Video = () => {
   const videoRef = useRef();
@@ -59,7 +60,7 @@ const Video = () => {
         </div>
       )}
 
-      <div className="absolute top-2 left-0 right-0">
+      <div className="absolute top-0 left-0 right-0">
         <div
           onClick={(e) => {
             const clickPosition = e.clientX;
@@ -75,6 +76,13 @@ const Video = () => {
             className="w-full h-full bg-purple-500 "
           ></div>
         </div>
+      </div>
+      <div className="absolute top-4 left-0 right-0 ">
+          <div className="text-right flex justify-end gap-2 px-5">
+            <p className="text-white text-md border-white border-2 px-2 rounded-md font-semibold active:bg-white active:text-black">CC</p>
+            <p className="text-white text-md border-white border-2 px-2 rounded-md font-semibold active:bg-white active:text-black">1x</p>
+            <p className="text-white text-md border-white border-2 px-2 rounded-md font-semibold active:bg-white active:text-black pt-1"><BiFullscreen/></p>
+          </div>
       </div>
     </div>
   );
