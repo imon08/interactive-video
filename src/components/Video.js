@@ -18,7 +18,14 @@ const Video = ({ subtitleFile, videoUrl }) => {
   const [showSubtitles, setShowSubtitles] = useState(true);
   const [currentSubtitle, setCurrentSubtitle] = useState("");
   const handleExitFullScreen = () => document.exitFullscreen();
-
+  const formatDuration = (duration) => {
+    if (isNaN(duration)) return "00:00";
+    let minutes = Math.floor(duration / 60);
+    let seconds = Math.floor(duration % 60);
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+    return minutes + ":" + seconds;
+  };
   const increaseVideoRate = () => {
     if (videoRef.current.playbackRate == 2) {
       videoRef.current.playbackRate = 1;
@@ -129,6 +136,9 @@ const Video = ({ subtitleFile, videoUrl }) => {
           </div>
           <div className="absolute top-4 left-0 right-0 ">
             <div className="text-right flex justify-end gap-2 px-5">
+              <div className="text-white">
+                {formatDuration(played * duration)} / {formatDuration(duration)}
+              </div>
               <p
                 onClick={() => {
                   setShowSubtitles(!showSubtitles);
