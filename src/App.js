@@ -3,6 +3,8 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import Home from "./components/Home";
 import PageA from "./components/PageA";
+import PageB from "./components/PageB";
+import PageC from "./components/PageC";
 
 function App() {
   const location = useLocation();
@@ -12,6 +14,8 @@ function App() {
         <Routes location={location} key={location.pathname}>
           <Route exact path="/" element={ <RouteContainer><Home /></RouteContainer>} />
           <Route exact path="/pageA" element={ <RouteContainer><PageA /></RouteContainer>} />
+          <Route exact path="/pageB" element={ <RouteContainer><PageB /></RouteContainer>} />
+          <Route exact path="/pageC" element={ <RouteContainer><PageC /></RouteContainer>} />
         </Routes>
       </AnimatePresence>
     </div>
