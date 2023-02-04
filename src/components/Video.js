@@ -82,7 +82,7 @@ const Video = ({ subtitleFile, videoUrl }) => {
         autoPlay
         muted
         controls={false}
-        loop
+        loop={!triggered}
         onEnded={() => {
           setPlaying(false);
         }}
