@@ -37,7 +37,7 @@ const Home = () => {
             smallScreen
           />
         </Link>
-        <Link to="/pageC">0
+        <Link to="/pageC">
           <Buttons alphabet="C" placeholder="3rd Choice" smallScreen />
         </Link>
       </div>
